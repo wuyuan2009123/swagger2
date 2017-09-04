@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.concurrent.Callable;
 
 /**
  * Created by wuy on 2017/9/4.
@@ -44,4 +45,28 @@ public class SeckillController {
         Seckill seckill = seckillService.getById(seckillId);
         return seckill;
     }
+
+
+    @RequestMapping(value = "/{seckillId}/ayscdetail", method = RequestMethod.GET)
+    public Callable<Seckill> ayscdetail(@PathVariable("seckillId") Long seckillId, Model model) {
+        Callable<Seckill> result=null;
+        if (seckillId == null) {
+            result=new Callable<Seckill>() {
+                public Seckill call() throws Exception {
+                    return new Seckill();
+                }
+            };
+        }
+        final Seckill seckill = seckillService.getById(seckillId);
+        return new Callable<Seckill>() {
+            public Seckill call() throws Exception {
+                return seckill;
+            }
+        };
+    }
+
+
+
+
+
 }
