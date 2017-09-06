@@ -28,6 +28,7 @@ public class BookSecurity {
         System.err.println(" BookSecurity principal : "+principal);
         if (principal != null && principal instanceof UserDetails) {
             System.err.println(((UserDetails) principal).getAuthorities());
+            //在这里  判断 url 是否在 和 你的 资源url 匹配, 如果 匹配的话 就授权,否则 就 return false
         }
         return true;
     }
