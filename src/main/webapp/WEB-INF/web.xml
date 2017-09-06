@@ -4,45 +4,6 @@
          version="3.1" metadata-complete="true">
 
 
-
-  <!--<filter>-->
-    <!--<filter-name>springSecurityFilterChain</filter-name>-->
-    <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
-  <!--</filter>-->
-  <!--<filter-mapping>-->
-    <!--<filter-name>springSecurityFilterChain</filter-name>-->
-    <!--<url-pattern>/*</url-pattern>-->
-  <!--</filter-mapping>-->
-
-  <!--&lt;!&ndash; 配置session监听器 &ndash;&gt;-->
-  <!--<listener>-->
-    <!--<description>session监听器</description>-->
-    <!--<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>-->
-  <!--</listener>-->
-
-  <!--<filter>-->
-    <!--<description>字符集过滤器</description>-->
-    <!--<filter-name>encodingFilter</filter-name>-->
-    <!--<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>-->
-    <!--<init-param>-->
-      <!--<description>字符集编码</description>-->
-      <!--<param-name>encoding</param-name>-->
-      <!--<param-value>UTF-8</param-value>-->
-    <!--</init-param>-->
-  <!--</filter>-->
-  <!--<filter-mapping>-->
-    <!--<filter-name>encodingFilter</filter-name>-->
-    <!--<url-pattern>/*</url-pattern>-->
-  <!--</filter-mapping>-->
-
-
-
-
-
-
-
-
-
   <!-- 修改servlet版本为3.1 -->
   <!-- 配置DispatcherServlet -->
   <servlet>
