@@ -1,5 +1,6 @@
 package com.swagger.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,17 +15,12 @@ import redis.clients.jedis.JedisShardInfo;
 @EnableRedisHttpSession
 public class SessionConfig {
 
-	@Value("${redis.host}")
-	private String host;
-
-	@Value("${redis.port}")
-	private String port;
-
+	@Autowired
+	private JedisConnectionFactory jedisConnectionFactory;
 
 
 	@Bean
 	public JedisConnectionFactory connectionFactory() {
-		JedisShardInfo jedisShardInfo=new JedisShardInfo(host,Integer.valueOf(port));
-		return new JedisConnectionFactory(jedisShardInfo);
+		return jedisConnectionFactory;
 	}
 }
