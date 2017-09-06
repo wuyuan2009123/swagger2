@@ -10,6 +10,7 @@ import redis.clients.jedis.JedisPool;
 import java.util.HashMap;
 import java.util.Map;
 
+@Deprecated
 public class RedisDao {
 
     private final static Logger logger = LoggerFactory.getLogger(RedisDao.class);
