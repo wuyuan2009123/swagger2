@@ -1,7 +1,6 @@
 package com.swagger.session;
 
 import com.swagger.CookieUtil;
-import com.swagger.RedisDao;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.ServletContext;
