@@ -27,19 +27,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private BookShopAuthenticationFailureHandler bookShopAuthenticationFailureHandler;
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/css/**","/js/**","/img/**","/font-awesome/**");
-    }
+//    @Override
+//    public void configure(WebSecurity web) throws Exception {
+//        web.ignoring().antMatchers("/css/**","/js/**","/img/**","/font-awesome/**");
+//    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(myUserDetailsService);
     }
-
-
-
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -48,23 +44,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/resources/**").permitAll()
-                .antMatchers("/", "/home").permitAll()
+                .antMatchers("/", "/login").permitAll()
                 .anyRequest().access("@bookSecurity.check(authentication,request)")
-                //.anyRequest().access("hasRole('admin')")
                 .and()
                 .exceptionHandling().accessDeniedPage("/Access_Denied");
-
-//        http.httpBasic().and()
-//                .authorizeRequests()
-//                .antMatchers("/", "/home","/login").permitAll()
-//                .anyRequest().access("@bookSecurity.check(authentication,request)")
-//                .and()
-//                .formLogin()
-//                .and()
-//                .exceptionHandling().accessDeniedPage("/Access_Denied")
-//                .and()
-//                .csrf().disable();
-
 
 
 //        http.formLogin()

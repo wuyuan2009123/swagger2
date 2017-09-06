@@ -14,8 +14,17 @@ public class BookSecurity {
 
     public boolean check(Authentication authentication, HttpServletRequest request) {
         System.out.println("-----------------------------------> BookSecurity  ");
-        System.err.println(request.getRequestURI());
+
+        String url= request.getRequestURI();
+        System.err.println(url);
+
+        if( "/".equals(url)  || "/login".equals(url) ||  url.contains("/css") || url.contains("/img") || url.contains("/font-awesome") || url.contains("/js")){
+            return true;
+        }
         Object principal = authentication.getPrincipal();
+        if(!(principal instanceof UserDetails)){
+            return false;
+        }
         System.err.println(" BookSecurity principal : "+principal);
         if (principal != null && principal instanceof UserDetails) {
             System.err.println(((UserDetails) principal).getAuthorities());
