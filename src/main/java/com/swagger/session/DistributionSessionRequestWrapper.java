@@ -1,12 +1,11 @@
 package com.swagger.session;
 
-import com.swagger.CookieUtil;
+import com.swagger.util.CookieUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.UUID;
 
 /**
  * Created by wuy on 2017/9/6.

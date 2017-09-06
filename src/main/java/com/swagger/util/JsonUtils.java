@@ -1,4 +1,4 @@
-package com.swagger;
+package com.swagger.util;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonParseException;
