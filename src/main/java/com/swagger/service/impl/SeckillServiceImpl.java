@@ -6,7 +6,6 @@ package com.swagger.service.impl;
 
 
 import com.swagger.dao.SeckillDao;
-import com.swagger.dao.cache.RedisDao;
 import com.swagger.entity.Seckill;
 import com.swagger.service.SeckillService;
 import org.slf4j.Logger;
@@ -27,8 +26,6 @@ public class SeckillServiceImpl implements SeckillService {
     @Autowired
     private SeckillDao seckillDao;
 
-    @Autowired
-    private RedisDao redisDao;
 
 
     public List<Seckill> getSeckillList() {
