@@ -14,6 +14,8 @@
 
     <springsecurity.version>4.0.1.RELEASE</springsecurity.version>
 
+    <spring.session.version>1.0.0.RELEASE</spring.session.version>
+
   </properties>
 
 
@@ -129,11 +131,12 @@
     </dependency>
 
     <!-- redis客户端:Jedis -->
-    <dependency>
+    <!--<dependency>
       <groupId>redis.clients</groupId>
       <artifactId>jedis</artifactId>
       <version>2.7.3</version>
-    </dependency>
+    </dependency>-->
+
     <dependency>
       <groupId>com.dyuproject.protostuff</groupId>
       <artifactId>protostuff-core</artifactId>
@@ -173,6 +176,28 @@
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-config</artifactId>
       <version>${springsecurity.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-pool2</artifactId>
+      <version>2.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-redis</artifactId>
+      <version>1.4.1.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>2.5.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.session</groupId>
+      <artifactId>spring-session</artifactId>
+      <version>${spring.session.version}</version>
     </dependency>
 
 
